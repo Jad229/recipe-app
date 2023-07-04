@@ -10,6 +10,12 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: [true, "Please add a password"],
   },
+  savedRecipes: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "recipes",
+    },
+  ],
 });
 
 export const UserModel = mongoose.model("user", UserSchema);
